@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern Legacy Spray Foam - Digital Marketing Research Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .report-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .nav-contact {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-contact a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .report-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            background: rgba(37, 99, 235, 0.3);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            background: rgba(16, 185, 129, 0.3);
+            top: 60%;
+            right: 20%;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            background: rgba(245, 158, 11, 0.3);
+            bottom: 30%;
+            left: 60%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -100px) rotate(90deg); }
+            50% { transform: translate(-100px, 100px) rotate(180deg); }
+            75% { transform: translate(50px, 50px) rotate(270deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .animated-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .score-section {
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .score-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .overall-score {
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--warning) 0deg 144deg, rgba(255,255,255,0.2) 144deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--dark);
+            border-radius: 50%;
+        }
+
+        .score-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .score-label {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        .score-status {
+            background: var(--warning);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .metric-name {
+            font-weight: 600;
+        }
+
+        .metric-score {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .metric-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        .score-6 { background: var(--warning); }
+        .score-3 { background: var(--danger); }
+        .score-1 { background: var(--danger); }
+        .score-2 { background: var(--danger); }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .finding-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .finding-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-critical {
+            background: var(--danger);
+            color: white;
+        }
+
+        .status-warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .status-good {
+            background: var(--success);
+            color: white;
+        }
+
+        .finding-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .finding-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .finding-list li:last-child {
+            border-bottom: none;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-contact {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cta-contact-item {
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .opportunity-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .opportunity-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+            color: white;
+        }
+
+        .opportunity-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .social-media-section {
+            background: var(--light);
+        }
+
+        .social-status {
+            background: var(--danger);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+
+        .social-platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-platform {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .social-platform.missing {
+            opacity: 0.6;
+            border: 2px dashed var(--danger);
+        }
+
+        .social-platform.missing .platform-status {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .platform-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-status {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .score-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="report-nav">
+        <div class="nav-container">
+            <div class="nav-brand">Digital Marketing Research Report</div>
+            <div class="nav-contact">
+                <a href="https://echoaisystem.com" target="_blank">echoaisystem.com</a>
+                <a href="mailto:echoaisystems@gmail.com">echoaisystems@gmail.com</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="report-hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Northern Legacy Spray Foam</h1>
+            <p class="hero-subtitle">Comprehensive Digital Marketing Research & Analysis</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7</div>
+                    <div class="hero-stat-label">Research Areas</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">9</div>
+                    <div class="hero-stat-label">Competitors Analyzed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">25+</div>
+                    <div class="hero-stat-label">Opportunities Identified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Footprint Score -->
+    <section class="section score-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Current Assessment</div>
+                <h2 class="section-title" style="color: white;">Your Digital Footprint Score</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Click each metric to see detailed analysis</p>
+            </div>
+            
+            <div class="score-container" data-animate>
+                <div class="overall-score">
+                    <div class="score-circle">
+                        <div class="score-number">4<span style="font-size: 1.5rem;">/10</span></div>
+                    </div>
+                    <div class="score-label">Overall Digital Presence</div>
+                    <div class="score-status">Needs Improvement</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Website Performance</div>
+                            <div class="metric-score score-6">6/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-6" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Search Visibility</div>
+                            <div class="metric-score score-3">3/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-3" style="width: 30%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Social Media Presence</div>
+                            <div class="metric-score score-1">1/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-1" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Online Reputation</div>
+                            <div class="metric-score score-2">2/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-2" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Local SEO</div>
+                            <div class="metric-score score-3">3/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-3" style="width: 30%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <div class="metric-name">Content Strategy</div>
+                            <div class="metric-score score-2">2/10</div>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill score-2" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Research Analysis</div>
+                <h2 class="section-title">Key Findings</h2>
+                <p class="section-subtitle">Critical insights from our comprehensive digital presence analysis</p>
+            </div>
+            
+            <div class="findings-grid" data-animate>
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-critical">!</span>
+                        Google Business Profile Missing
+                    </h3>
+                    <ul class="finding-list">
+                        <li>No Google Business Profile found</li>
+                        <li>Missing from Google Maps results</li>
+                        <li>Zero local search visibility</li>
+                        <li>No customer review platform</li>
+                        <li>Critical competitive disadvantage</li>
+                    </ul>
+                </div>
+                
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-critical">!</span>
+                        Social Media Presence
+                    </h3>
+                    <ul class="finding-list">
+                        <li>No Instagram business account</li>
+                        <li>No Facebook business page</li>
+                        <li>No LinkedIn company profile</li>
+                        <li>No YouTube channel</li>
+                        <li>Missing social proof opportunities</li>
+                    </ul>
+                </div>
+                
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-warning">⚠</span>
+                        SEO Optimization Gaps
+                    </h3>
+                    <ul class="finding-list">
+                        <li>No schema markup implementation</li>
+                        <li>Missing meta descriptions</li>
+                        <li>Limited local SEO optimization</li>
+                        <li>No backlink profile development</li>
+                        <li>Insufficient keyword targeting</li>
+                    </ul>
+                </div>
+                
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-warning">⚠</span>
+                        Content Strategy Absent
+                    </h3>
+                    <ul class="finding-list">
+                        <li>No blog or content section</li>
+                        <li>No educational resources</li>
+                        <li>No case studies or testimonials</li>
+                        <li>Limited agricultural specialization content</li>
+                        <li>No regular content updates</li>
+                    </ul>
+                </div>
+                
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-good">✓</span>
+                        Website Foundation Strong
+                    </h3>
+                    <ul class="finding-list">
+                        <li>Professional design and branding</li>
+                        <li>Mobile-responsive layout</li>
+                        <li>Clear value proposition</li>
+                        <li>SSL certificate active</li>
+                        <li>Fast loading performance</li>
+                    </ul>
+                </div>
+                
+                <div class="finding-card">
+                    <h3 class="finding-title">
+                        <span class="status-icon status-good">✓</span>
+                        Market Positioning Opportunity
+                    </h3>
+                    <ul class="finding-list">
+                        <li>Clear agricultural specialization</li>
+                        <li>Owner expertise (10+ years)</li>
+                        <li>Low local competition</li>
+                        <li>Minnesota climate specialization</li>
+                        <li>Rural market underserved</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Analysis -->
+    <section class="section social-media-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Social Media Analysis</div>
+                <h2 class="section-title">Current Social Media Footprint</h2>
+                <p class="section-subtitle">Your presence across major social media platforms</p>
+            </div>
+            
+            <div class="social-status" data-animate>
+                <strong>No Active Social Media Accounts Found</strong> - Significant opportunity for brand building and customer engagement
+            </div>
+            
+            <div class="social-platforms" data-animate>
+                <div class="social-platform missing">
+                    <div class="platform-icon">📸</div>
+                    <div class="platform-name">Instagram</div>
+                    <div class="platform-status">Not Found</div>
+                </div>
+                
+                <div class="social-platform missing">
+                    <div class="platform-icon">📘</div>
+                    <div class="platform-name">Facebook</div>
+                    <div class="platform-status">Not Found</div>
+                </div>
+                
+                <div class="social-platform missing">
+                    <div class="platform-icon">💼</div>
+                    <div class="platform-name">LinkedIn</div>
+                    <div class="platform-status">Not Found</div>
+                </div>
+                
+                <div class="social-platform missing">
+                    <div class="platform-icon">📺</div>
+                    <div class="platform-name">YouTube</div>
+                    <div class="platform-status">Not Found</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunities -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Growth Strategy</div>
+                <h2 class="section-title">Immediate Opportunities</h2>
+                <p class="section-subtitle">High-impact actions to improve your digital presence</p>
+            </div>
+            
+            <div class="opportunities-grid" data-animate>
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🎯</div>
+                    <h3 class="opportunity-title">Google Business Profile</h3>
+                    <p class="opportunity-description">Set up and optimize your Google Business Profile for immediate local search visibility and customer reviews.</p>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">📱</div>
+                    <h3 class="opportunity-title">Social Media Presence</h3>
+                    <p class="opportunity-description">Establish Instagram and Facebook accounts to showcase projects and connect with the agricultural community.</p>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">⚡</div>
+                    <h3 class="opportunity-title">Technical SEO</h3>
+                    <p class="opportunity-description">Implement schema markup, meta descriptions, and local SEO optimization for better search rankings.</p>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">📊</div>
+                    <h3 class="opportunity-title">Content Strategy</h3>
+                    <p class="opportunity-description">Create educational content about agricultural insulation and Minnesota climate considerations.</p>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">⭐</div>
+                    <h3 class="opportunity-title">Review Generation</h3>
+                    <p class="opportunity-description">Implement a system to collect customer testimonials and online reviews for social proof.</p>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🌾</div>
+                    <h3 class="opportunity-title">Agricultural Specialization</h3>
+                    <p class="opportunity-description">Leverage your agricultural expertise to dominate the underserved rural insulation market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+            <p class="cta-subtitle">
+                Based on this comprehensive analysis, we've identified specific opportunities to strengthen your digital presence and attract more customers online.
+            </p>
+            
+            <div class="cta-contact">
+                <div class="cta-contact-item">Website: echoaisystem.com</div>
+                <div class="cta-contact-item">Email: echoaisystems@gmail.com</div>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.9;">
+                Let's discuss how these insights can help grow your business.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[data-animate]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // Smooth scroll for internal links
+        function smoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+            smoothScroll();
+        });
+    </script>
+</body>
+</html>
