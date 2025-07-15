@@ -1,0 +1,21 @@
+{
+  "name": "Northern Legacy Spray Foam",
+  "short_name": "NLSF",
+  "description": "Professional spray foam insulation solutions for Minnesota homes and businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a365d",
+  "icons": [
+    {
+      "src": "/images/logos/NLSF-compass.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logos/NLSF-compass.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
