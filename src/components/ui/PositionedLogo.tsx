@@ -1,15 +1,40 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 interface PositionedLogoProps {
   className?: string;
 }
 
 export function PositionedLogo({ className }: PositionedLogoProps) {
+  const [isVisible, setIsVisible] = React.useState(true);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    // Hide logo when scrolling past 100px
+    if (latest > 100) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  });
+
   return (
-    <div className={`fixed top-20 left-1/2 -translate-x-1/2 z-40 ${className}`}>
+    <motion.div
+      className={`fixed top-20 left-1/2 -translate-x-1/2 z-40 ${className}`}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        y: isVisible ? 0 : -20,
+      }}
+      transition={{
+        type: "spring",
+        damping: 20,
+        stiffness: 300,
+        duration: 0.3
+      }}
+      initial={{ y: -20, opacity: 0 }}
+    >
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -30,7 +55,7 @@ export function PositionedLogo({ className }: PositionedLogoProps) {
           }}
         />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
