@@ -63,15 +63,15 @@ const FloatingContactButton: React.FC = () => {
         </div>
       </div>
 
-      {/* Floating Button with Metal Glass Effect matching menu */}
+      {/* Floating Button with Metal Glass Effect and better contrast */}
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-30 group"
         aria-label="Contact Northern Legacy Spray Foam"
       >
         <div className="relative">
-          {/* Subtle glow effect matching menu */}
-          <div className="absolute inset-0 rounded-full bg-legacy-green opacity-20 blur-xl group-hover:opacity-30 transition-opacity" />
+          {/* Subtle glow effect with white/blue glow */}
+          <div className="absolute inset-0 rounded-full bg-white opacity-20 blur-xl group-hover:opacity-30 transition-opacity" />
           
           {/* Button with metal glass effect matching MetalMenuBar */}
           <div className="
@@ -98,29 +98,27 @@ const FloatingContactButton: React.FC = () => {
             {/* Inner glow */}
             <div className="absolute inset-[1px] rounded-full bg-gradient-to-br from-slate-700/20 to-transparent pointer-events-none" />
             
-            {/* Green phone icon */}
-            <div className="relative z-10 w-8 h-8 bg-legacy-green/20 rounded-lg flex items-center justify-center group-hover:bg-legacy-green/30 transition-colors duration-300">
-              <Phone className="w-5 h-5 text-legacy-green" />
-            </div>
+            {/* White phone icon for better contrast */}
+            <Phone className="w-5 h-5 text-white relative z-10 drop-shadow-sm" />
             
-            {/* Active-style highlight effect */}
+            {/* Active-style highlight effect with white/blue theme */}
             <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
                 background: `linear-gradient(135deg, 
-                  rgba(34, 197, 94, 0.1) 0%, 
+                  rgba(255, 255, 255, 0.1) 0%, 
                   rgba(59, 130, 246, 0.05) 50%, 
-                  rgba(34, 197, 94, 0.1) 100%)`,
+                  rgba(255, 255, 255, 0.1) 100%)`,
                 boxShadow: `
-                  inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2),
                   inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-                  0 0 20px rgba(34, 197, 94, 0.2)
+                  0 0 20px rgba(255, 255, 255, 0.1)
                 `
               }}
             />
           </div>
           
-          {/* Pulse animation with Northern Legacy green */}
-          <div className="absolute inset-0 rounded-full border-2 border-legacy-green/20 animate-ping" />
+          {/* Pulse animation with white color */}
+          <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping" />
         </div>
       </button>
     </>
