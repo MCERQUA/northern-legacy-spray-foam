@@ -1,0 +1,205 @@
+---
+import { Shield, Award, Users, MapPin, Calendar, CheckCircle } from 'lucide-react';
+
+const stats = [
+  {
+    icon: Calendar,
+    number: "3+",
+    label: "Years Serving Minnesota",
+    description: "Founded in May 2022"
+  },
+  {
+    icon: Users,
+    number: "500+",
+    label: "Satisfied Customers",
+    description: "Homes & Businesses"
+  },
+  {
+    icon: MapPin,
+    number: "87",
+    label: "Minnesota Counties",
+    description: "Statewide Coverage"
+  },
+  {
+    icon: Shield,
+    number: "100%",
+    label: "Licensed & Insured",
+    description: "Fully Bonded"
+  }
+];
+
+const values = [
+  {
+    icon: CheckCircle,
+    title: "Quality First",
+    description: "We use only premium spray foam materials and proven application techniques to ensure lasting performance."
+  },
+  {
+    icon: Users,
+    title: "Customer-Focused",
+    description: "Every project receives personalized attention and clear communication throughout the entire process."
+  },
+  {
+    icon: Shield,
+    title: "Professional Standards",
+    description: "Licensed, bonded, and insured with continuous training on the latest insulation technologies."
+  },
+  {
+    icon: MapPin,
+    title: "Minnesota Expertise",
+    description: "Deep understanding of Minnesota's climate challenges and building requirements."
+  }
+];
+---
+
+<section class="py-20 bg-arctic-white" id="about">
+  <div class="container-padding max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <div class="w-12 h-[1px] bg-northern-blue"></div>
+        <span class="text-northern-blue font-medium uppercase tracking-wider text-sm">About Us</span>
+        <div class="w-12 h-[1px] bg-northern-blue"></div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-charcoal mb-6">
+        Meet <span class="text-legacy-green">Northern Legacy</span><br class="md:hidden" />
+        <span class="text-northern-blue">Spray Foam</span>
+      </h2>
+      <p class="text-lg text-cool-gray max-w-3xl mx-auto">
+        Minnesota's trusted spray foam insulation specialists, dedicated to providing superior energy efficiency solutions for homes and businesses across the state.
+      </p>
+    </div>
+
+    <!-- Owner Introduction -->
+    <div class="bg-gradient-to-br from-ice-blue/20 to-mint-gray/20 rounded-3xl p-8 md:p-12 mb-16 border border-legacy-green/20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-legacy-green/15 rounded-full">
+            <Award className="w-5 h-5 text-legacy-green" />
+            <span class="text-legacy-green font-medium text-sm">Owner & Founder</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4">Garhard Hendricks</h3>
+          <p class="text-cool-gray leading-relaxed mb-6">
+            Founded in May 2022, Northern Legacy Spray Foam was established with a simple mission: to provide Minnesota homeowners and businesses with the highest quality spray foam insulation services. With a deep understanding of Minnesota's challenging climate, we specialize in creating energy-efficient building envelopes that stand up to our harsh winters and humid summers.
+          </p>
+          <p class="text-cool-gray leading-relaxed">
+            Our commitment to excellence means using only premium materials, employing proven application techniques, and maintaining the highest professional standards in every project we undertake.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            {stats.map((stat) => (
+              <div class="bg-arctic-white rounded-2xl p-4 shadow-northern border border-ice-blue/30 text-center">
+                <div class="w-12 h-12 bg-legacy-green/15 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <stat.icon className="w-6 h-6 text-legacy-green" />
+                </div>
+                <div class="text-2xl font-bold text-charcoal mb-1">{stat.number}</div>
+                <div class="text-sm font-medium text-legacy-green mb-1">{stat.label}</div>
+                <div class="text-xs text-cool-gray">{stat.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4">Our Core Values</h3>
+        <p class="text-cool-gray max-w-2xl mx-auto">
+          The principles that guide every project and customer interaction at Northern Legacy Spray Foam.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {values.map((value, index) => (
+          <div class="group relative">
+            <div class="bg-arctic-white rounded-2xl p-6 shadow-northern border border-ice-blue/30 hover:shadow-legacy hover:border-legacy-green/40 transition-all duration-300 h-full">
+              <div class="w-14 h-14 bg-northern-blue/15 rounded-xl flex items-center justify-center mb-4 group-hover:bg-legacy-green/15 transition-colors duration-300">
+                <value.icon className="w-7 h-7 text-northern-blue group-hover:text-legacy-green transition-colors duration-300" />
+              </div>
+              <h4 class="text-xl font-bold text-charcoal mb-3">{value.title}</h4>
+              <p class="text-cool-gray text-sm leading-relaxed">{value.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Service Area & Contact -->
+    <div class="bg-gradient-to-br from-legacy-green/10 to-northern-blue/10 rounded-3xl p-8 md:p-12 border border-legacy-green/20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-legacy-green/15 rounded-full">
+            <MapPin className="w-5 h-5 text-legacy-green" />
+            <span class="text-legacy-green font-medium text-sm">Statewide Service</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-charcoal mb-4">Serving All of Minnesota</h3>
+          <p class="text-cool-gray leading-relaxed mb-6">
+            Based in Lawn Prairie, Minnesota, Northern Legacy Spray Foam provides professional insulation services throughout the entire state. From the Twin Cities metro to Duluth, from Rochester to Moorhead, we bring our expertise directly to your location.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-legacy-green rounded-full"></div>
+              <span class="text-cool-gray">Residential homes and properties</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-northern-blue rounded-full"></div>
+              <span class="text-cool-gray">Commercial and industrial buildings</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-steel-blue rounded-full"></div>
+              <span class="text-cool-gray">New construction projects</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-arctic-white rounded-2xl p-6 shadow-northern border border-ice-blue/30">
+          <h4 class="text-xl font-bold text-charcoal mb-4">Ready to Get Started?</h4>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-legacy-green/15 rounded-lg flex items-center justify-center">
+                <span class="text-legacy-green text-lg">📍</span>
+              </div>
+              <div>
+                <div class="font-medium text-charcoal">23154 190th Street</div>
+                <div class="text-cool-gray text-sm">Lawn Prairie, MN 56437</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-northern-blue/15 rounded-lg flex items-center justify-center">
+                <span class="text-northern-blue text-lg">📞</span>
+              </div>
+              <div>
+                <a href="tel:3207602543" class="font-medium text-charcoal hover:text-northern-blue transition-colors">
+                  (320) 760-2543
+                </a>
+                <div class="text-cool-gray text-sm">Call for free consultation</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-steel-blue/15 rounded-lg flex items-center justify-center">
+                <span class="text-steel-blue text-lg">✉️</span>
+              </div>
+              <div>
+                <a href="mailto:Northernlegacysprayfoam@gmail.com" class="font-medium text-charcoal hover:text-steel-blue transition-colors break-all text-sm">
+                  Northernlegacysprayfoam@gmail.com
+                </a>
+                <div class="text-cool-gray text-sm">Email us anytime</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-ice-blue">
+            <a 
+              href="#contact-form"
+              class="w-full inline-flex items-center justify-center px-6 py-3 bg-legacy-green text-white font-medium rounded-full hover:bg-legacy-green/90 transition-all duration-300"
+            >
+              Get Your Free Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
