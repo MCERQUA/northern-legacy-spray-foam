@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import MetalMenuBar from '../components/ui/MetalMenuBar.tsx';
+import PositionedLogo from '../components/ui/PositionedLogo.tsx';
 import FloatingContactButton from '../components/ui/FloatingContactButton.tsx';
 import GlassFilter from '../components/ui/GlassFilter.tsx';
 import Footer from '../components/sections/Footer.astro';
@@ -43,6 +44,9 @@ const { title, description = 'Northern Legacy Spray Foam - Professional spray fo
     
     <!-- Navigation -->
     <MetalMenuBar client:load />
+    
+    <!-- Positioned Logo -->
+    <PositionedLogo client:load />
     
     <!-- Main Content -->
     <main class="min-h-screen">
