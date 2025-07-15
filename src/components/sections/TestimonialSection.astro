@@ -35,65 +35,94 @@ const testimonials = [
 ];
 ---
 
-<section class="relative py-20 sm:py-24 bg-gradient-to-br from-charcoal to-midnight overflow-hidden">
-  {/* Professional background pattern */}
+<section class="relative py-20 sm:py-24 bg-gradient-to-br from-charcoal via-midnight to-slate-900 overflow-hidden">
+  {/* Enhanced professional background pattern */}
   <div class="absolute inset-0 opacity-5">
-    <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);"></div>
+    <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(5,150,105,.1) 35px, rgba(5,150,105,.1) 70px);"></div>
   </div>
   
+  {/* Animated green accents */}
+  <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-legacy-green/10 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-40 h-40 bg-forest-green/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  
   <div class="container-padding max-w-7xl mx-auto relative">
-    {/* Section header */}
+    {/* Section header with enhanced styling */}
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 mb-4">
-        <div class="w-12 h-[1px] bg-legacy-green"></div>
-        <span class="text-legacy-green font-medium uppercase tracking-wider text-sm">Client Reviews</span>
-        <div class="w-12 h-[1px] bg-legacy-green"></div>
+        <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-legacy-green to-transparent"></div>
+        <span class="text-legacy-green font-medium uppercase tracking-wider text-sm bg-legacy-green/10 px-4 py-2 rounded-full border border-legacy-green/30">Client Reviews</span>
+        <div class="w-12 h-[1px] bg-gradient-to-r from-legacy-green via-legacy-green to-transparent"></div>
       </div>
       <h2 class="text-4xl sm:text-5xl font-bold text-soft-white mb-4">
-        What Minnesota Customers Say
+        What <span class="gradient-text-green">Minnesota Customers</span> Say
       </h2>
       <p class="text-lg text-frost-gray max-w-2xl mx-auto">
         Trusted by homeowners and businesses across Minnesota for professional spray foam insulation solutions
       </p>
     </div>
     
-    {/* Testimonial cards container */}
+    {/* Testimonial cards container with enhanced styling */}
     <div class="relative h-[500px] sm:h-[550px] flex items-center justify-center">
       <div class="relative w-[320px] sm:w-[350px] h-[400px] sm:h-[450px]">
         <TestimonialSection testimonials={testimonials} client:load />
       </div>
+      
+      {/* Green accent elements around the testimonial area */}
+      <div class="absolute -top-4 -left-4 w-8 h-8 border-2 border-legacy-green/30 rounded-full animate-pulse"></div>
+      <div class="absolute -top-4 -right-4 w-6 h-6 bg-legacy-green/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-forest-green/20 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+      <div class="absolute -bottom-4 -right-4 w-8 h-8 border-2 border-forest-green/30 rounded-full animate-pulse" style="animation-delay: 3s;"></div>
     </div>
     
-    {/* Instructions */}
+    {/* Instructions with green styling */}
     <div class="text-center mt-8">
-      <p class="text-frost-gray/70 text-sm">
+      <p class="text-frost-gray/70 text-sm bg-legacy-green/5 px-4 py-2 rounded-full border border-legacy-green/20 inline-block">
         <span class="hidden sm:inline">Drag the cards to see more reviews</span>
         <span class="sm:hidden">Swipe to see more reviews</span>
       </p>
     </div>
     
-    {/* Trust indicators */}
+    {/* Enhanced trust indicators with green accents */}
     <div class="text-center mt-12">
-      <div class="inline-flex items-center gap-6 px-6 py-3 bg-legacy-green/10 rounded-full border border-legacy-green/20">
+      <div class="inline-flex items-center gap-6 px-8 py-4 bg-gradient-to-r from-legacy-green/10 via-forest-green/5 to-legacy-green/10 rounded-full border border-legacy-green/20 backdrop-blur-sm">
         <div class="flex items-center gap-2">
-          <span class="text-legacy-green text-lg">⭐</span>
+          <span class="text-legacy-green text-lg animate-pulse">⭐</span>
           <span class="text-soft-white font-medium">5.0 Rating</span>
         </div>
-        <div class="w-1 h-4 bg-frost-gray/30"></div>
+        <div class="w-1 h-4 bg-legacy-green/30"></div>
         <div class="flex items-center gap-2">
-          <span class="text-northern-blue text-lg">🏆</span>
+          <span class="text-legacy-green text-lg">🏆</span>
           <span class="text-soft-white font-medium">Licensed & Insured</span>
         </div>
-        <div class="w-1 h-4 bg-frost-gray/30"></div>
+        <div class="w-1 h-4 bg-legacy-green/30"></div>
         <div class="flex items-center gap-2">
-          <span class="text-steel-blue text-lg">📍</span>
+          <span class="text-legacy-green text-lg">📍</span>
           <span class="text-soft-white font-medium">Minnesota Statewide</span>
         </div>
       </div>
     </div>
     
-    {/* Decorative elements with Northern Legacy colors */}
-    <div class="absolute top-10 left-10 w-20 h-20 bg-legacy-green/15 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 right-10 w-32 h-32 bg-northern-blue/15 rounded-full blur-3xl"></div>
+    {/* Enhanced decorative elements with green theme */}
+    <div class="absolute top-10 left-10 w-20 h-20 bg-legacy-green/15 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-forest-green/15 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    
+    {/* Green corner gradients */}
+    <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-legacy-green/5 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-forest-green/5 to-transparent rounded-full blur-3xl"></div>
   </div>
 </section>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.05);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>
