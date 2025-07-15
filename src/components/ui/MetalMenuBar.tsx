@@ -144,7 +144,6 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
           )}
         >
           {items.map((item) => {
-            const Icon = item.icon;
             const isActive = activeTab === item.name;
 
             return (
@@ -164,10 +163,8 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
                   isActive && "bg-white/15 text-white shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
                 )}
               >
-                <span className="hidden md:inline relative z-10">{item.name}</span>
-                <span className="md:hidden relative z-10">
-                  <Icon size={18} strokeWidth={2.5} />
-                </span>
+                {/* Always show text, no icon switching */}
+                <span className="relative z-10">{item.name}</span>
                 
                 {/* Active indicator with forest green/steel blue theme */}
                 {isActive && (
