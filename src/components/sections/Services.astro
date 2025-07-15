@@ -1,9 +1,10 @@
 ---
 import GlassCard from '../ui/GlassCard.tsx';
 import GlassButton from '../ui/GlassButton.tsx';
-import atticImage from '@assets/images/attic-spray-foam-insulation-arizona-comfort.png';
-import crawlSpaceImage from '@assets/images/crawl-space-foam-insulation-arizona-comfort.png';
-import wallImage from '@assets/images/wall-ceilings-foam-insulation-arizona-comfort.png';
+// Updated to use public images instead of asset images
+const atticImage = '/images/Spray-foam-Insulation-Air-Sealed-Attic.JPG';
+const crawlSpaceImage = '/images/Comercial-Building-Spray-Foam-insulation-exterior.JPG';
+const wallImage = '/images/Wall-Insulation-Spray-Foam.JPG';
 
 const services = [
   {
@@ -79,7 +80,7 @@ const services = [
               <!-- Service Image with enhanced overlay -->
               <div class="relative mb-4 overflow-hidden rounded-2xl aspect-[4/3]">
                 <img 
-                  src={service.image.src} 
+                  src={service.image} 
                   alt={`${service.title} service`}
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
