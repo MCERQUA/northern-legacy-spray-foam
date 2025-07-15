@@ -23,22 +23,39 @@ const footerLinks = {
 <footer class="bg-midnight text-soft-white py-16">
   <div class="container-padding max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-      <!-- Brand -->
-      <div class="space-y-4">
-        <div class="mb-4">
-          <h2 class="text-2xl font-bold text-legacy-green mb-2">Northern Legacy</h2>
-          <h3 class="text-lg text-steel-blue">Spray Foam</h3>
+      <!-- Brand with Logo -->
+      <div class="space-y-6">
+        <div class="mb-6">
+          <img 
+            src="/images/logos/NLSF-logo.png" 
+            alt="Northern Legacy Spray Foam" 
+            class="h-12 sm:h-14 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+            style="filter: brightness(1.1);"
+          />
         </div>
         <p class="text-frost-gray text-sm leading-relaxed">
           Professional spray foam insulation solutions for Minnesota homes and businesses. 
           Serving the state with quality, reliability, and excellence.
         </p>
         <div class="text-sm text-frost-gray">
-          <p class="font-medium text-soft-white">Contact Information:</p>
-          <p>📍 23154 190th Street</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;Lawn Prairie, MN 56437</p>
-          <p>📞 (320) 760-2543</p>
-          <p>✉️ Northernlegacysprayfoam@gmail.com</p>
+          <p class="font-medium text-soft-white mb-2">Contact Information:</p>
+          <div class="space-y-1">
+            <p class="flex items-center gap-2">
+              <span class="text-legacy-green">📍</span>
+              23154 190th Street
+            </p>
+            <p class="ml-6 text-cool-gray">Lawn Prairie, MN 56437</p>
+            <p class="flex items-center gap-2">
+              <span class="text-northern-blue">📞</span>
+              <a href="tel:3207602543" class="hover:text-legacy-green transition-colors">(320) 760-2543</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-steel-blue">✉️</span>
+              <a href="mailto:Northernlegacysprayfoam@gmail.com" class="hover:text-legacy-green transition-colors break-all text-xs">
+                Northernlegacysprayfoam@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </div>
       
@@ -50,7 +67,7 @@ const footerLinks = {
             <li>
               <a 
                 href={link.href}
-                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm hover:text-legacy-green"
               >
                 {link.label}
               </a>
@@ -67,7 +84,7 @@ const footerLinks = {
             <li>
               <a 
                 href={link.href}
-                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm hover:text-legacy-green"
               >
                 {link.label}
               </a>
@@ -84,7 +101,7 @@ const footerLinks = {
             <li>
               <a 
                 href={link.href}
-                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm hover:text-legacy-green"
               >
                 {link.label}
               </a>
@@ -92,7 +109,10 @@ const footerLinks = {
           ))}
         </ul>
         <div class="mt-6 pt-4 border-t border-steel-gray/30">
-          <p class="text-xs text-frost-gray mb-2">Service Areas:</p>
+          <p class="text-xs text-frost-gray mb-2 flex items-center gap-2">
+            <span class="text-legacy-green">🗺️</span>
+            Service Areas:
+          </p>
           <p class="text-xs text-cool-gray">Minnesota Statewide</p>
         </div>
       </div>
@@ -105,15 +125,25 @@ const footerLinks = {
           © {currentYear} Northern Legacy Spray Foam. All rights reserved.
         </p>
         <div class="flex items-center gap-4 text-sm">
-          <p class="text-legacy-green font-medium">Licensed</p>
+          <p class="text-legacy-green font-medium flex items-center gap-1">
+            <span class="w-2 h-2 bg-legacy-green rounded-full"></span>
+            Licensed
+          </p>
           <span class="text-steel-gray">•</span>
-          <p class="text-steel-blue font-medium">Bonded</p>
+          <p class="text-steel-blue font-medium flex items-center gap-1">
+            <span class="w-2 h-2 bg-steel-blue rounded-full"></span>
+            Bonded
+          </p>
           <span class="text-steel-gray">•</span>
-          <p class="text-northern-blue font-medium">Insured</p>
+          <p class="text-northern-blue font-medium flex items-center gap-1">
+            <span class="w-2 h-2 bg-northern-blue rounded-full"></span>
+            Insured
+          </p>
         </div>
       </div>
       <div class="mt-4 pt-4 border-t border-steel-gray/20">
-        <p class="text-xs text-cool-gray text-center">
+        <p class="text-xs text-cool-gray text-center flex items-center justify-center gap-2">
+          <span class="text-legacy-green">🏢</span>
           Founded May 9, 2022 • Owner: Garhard Hendricks • Minnesota LLC
         </p>
       </div>
