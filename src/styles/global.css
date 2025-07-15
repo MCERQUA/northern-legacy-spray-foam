@@ -7,49 +7,63 @@
 /* Base styles */
 @layer base {
   body {
-    @apply bg-cream text-espresso;
+    @apply bg-arctic-white text-charcoal;
   }
 }
 
-/* Custom scrollbar */
+/* Enhanced Northern Legacy scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F2;
+  background: linear-gradient(to bottom, #F1F5F9, #E2E8F0);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C8B89E;
-  border-radius: 5px;
+  background: linear-gradient(to bottom, #059669, #10B981);
+  border-radius: 10px;
+  border: 2px solid #F1F5F9;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A69580;
+  background: linear-gradient(to bottom, #047857, #059669);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 10px rgba(5, 150, 105, 0.3);
 }
 
-/* Glass morphism with warm tones */
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #065f46, #047857);
+}
+
+/* Firefox scrollbar support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #059669 #F1F5F9;
+}
+
+/* Glass morphism with Northern Legacy colors */
 .glass {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(200, 184, 158, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(74, 63, 54, 0.08);
+  background: rgba(250, 251, 252, 0.85);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(30, 64, 175, 0.08);
 }
 
 .glass-warm {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(250, 247, 242, 0.90);
-  border: 1px solid rgba(200, 184, 158, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(74, 63, 54, 0.12);
+  background: rgba(250, 251, 252, 0.90);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(5, 150, 105, 0.12);
 }
 
 .glass-dark {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(44, 40, 38, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
@@ -58,7 +72,7 @@
 .glass-navbar {
   backdrop-filter: blur(20px) saturate(1.5);
   -webkit-backdrop-filter: blur(20px) saturate(1.5);
-  background: rgba(123, 94, 72, 0.2);
+  background: rgba(5, 150, 105, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 
     0 8px 32px 0 rgba(31, 38, 135, 0.2),
@@ -81,6 +95,7 @@
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.3),
+    rgba(5, 150, 105, 0.1),
     rgba(255, 255, 255, 0.05)
   );
   -webkit-mask: 
@@ -110,9 +125,9 @@ body {
   @apply py-16 sm:py-20 lg:py-24;
 }
 
-/* Elegant shadow effects */
+/* Northern Legacy shadow effects */
 .shadow-elegant {
-  box-shadow: 0 10px 40px rgba(74, 63, 54, 0.1);
+  box-shadow: 0 10px 40px rgba(5, 150, 105, 0.1);
 }
 
 .shadow-elegant-hover {
@@ -120,7 +135,7 @@ body {
 }
 
 .shadow-elegant-hover:hover {
-  box-shadow: 0 15px 50px rgba(74, 63, 54, 0.15);
+  box-shadow: 0 15px 50px rgba(5, 150, 105, 0.15);
   transform: translateY(-2px);
 }
 
@@ -171,16 +186,45 @@ body {
   @apply text-base sm:text-lg leading-relaxed;
 }
 
-/* Form styling */
+/* Enhanced form styling with Northern Legacy colors */
 .form-input {
-  @apply w-full px-5 py-3 rounded-2xl bg-soft-white/50 backdrop-blur-sm 
-         border border-khaki/20 text-espresso placeholder-warm-gray
-         focus:outline-none focus:border-terra-cotta/50 focus:ring-2 
-         focus:ring-terra-cotta/20 transition-all duration-300;
+  @apply w-full px-5 py-3 rounded-2xl bg-arctic-white/70 backdrop-blur-sm 
+         border border-ice-blue/30 text-charcoal placeholder-cool-gray
+         focus:outline-none focus:border-legacy-green/50 focus:ring-2 
+         focus:ring-legacy-green/20 transition-all duration-300
+         hover:border-legacy-green/30;
 }
 
-/* Card styling */
+/* Card styling with Northern Legacy theme */
 .card-elegant {
-  @apply bg-soft-white rounded-3xl shadow-soft hover:shadow-medium 
-         transition-all duration-300;
+  @apply bg-arctic-white rounded-3xl shadow-northern hover:shadow-legacy 
+         transition-all duration-300 border border-ice-blue/20;
+}
+
+/* Green accent animations */
+@keyframes greenPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(5, 150, 105, 0);
+  }
+}
+
+.green-pulse {
+  animation: greenPulse 2s infinite;
+}
+
+/* Northern Legacy specific utilities */
+.gradient-text-green {
+  background: linear-gradient(135deg, #059669, #10B981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient-green {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #059669, #10B981) border-box;
 }
