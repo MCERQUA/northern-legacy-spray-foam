@@ -24,9 +24,9 @@ const GlassButton: React.FC<GlassButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: 'bg-terra-cotta/60 text-soft-white hover:bg-terra-cotta/70 border-terra-cotta/20',
-    secondary: 'bg-khaki/60 text-soft-white hover:bg-khaki/70 border-khaki/20',
-    outline: 'bg-transparent border-2 border-espresso text-espresso hover:bg-espresso/10'
+    primary: 'bg-legacy-green/80 text-arctic-white hover:bg-legacy-green/90 border-legacy-green/30',
+    secondary: 'bg-northern-blue/80 text-arctic-white hover:bg-northern-blue/90 border-northern-blue/30',
+    outline: 'bg-transparent border-2 border-legacy-green text-legacy-green hover:bg-legacy-green/10'
   };
 
   const buttonContent = (
@@ -36,7 +36,7 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         relative font-semibold overflow-hidden cursor-pointer 
         transition-all duration-300 rounded-full
         backdrop-blur-md border
-        shadow-glass hover:shadow-lg
+        shadow-legacy hover:shadow-northern
         transform hover:-translate-y-0.5
         ${sizeClasses[size]} ${variantClasses[variant]} ${className}
       `}
