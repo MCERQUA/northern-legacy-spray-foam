@@ -7,25 +7,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Main palette - warm, comfortable, professional
-        'cream': '#FAF7F2',           // Light cream background
-        'sand': '#E8DCC4',            // Warm sand
-        'sand-dark': '#D4C4A8',       // Darker sand for cards
-        'khaki': '#C8B89E',           // Medium khaki
-        'taupe': '#A69580',           // Darker taupe
-        'espresso': '#4A3F36',        // Dark brown for text
-        'charcoal': '#2C2826',        // Almost black for high contrast
-        'brown-tint': '#7B5E48',      // Brown for glass tint
+        // Northern Legacy Spray Foam - Professional color palette
+        // Main background colors
+        'arctic-white': '#FAFBFC',      // Clean white background
+        'frost-gray': '#F1F5F9',        // Light background sections
+        'steel-gray': '#E2E8F0',        // Card backgrounds
+        'northern-blue': '#1E40AF',     // Primary brand blue
+        'legacy-green': '#059669',      // Forest/legacy green
+        'charcoal': '#1F2937',          // Dark text and accents
+        'midnight': '#0F172A',          // Darkest elements
         
-        // Accent colors (use sparingly)
-        'sage-accent': '#8B9D83',     // Muted sage for eco sections only
-        'sage-mist': '#9FA897',       // Sage green for eco/savings sections
-        'terra-cotta': '#B8946F',     // Changed to tan/brown for CTAs
-        'soft-white': '#FEFDFB',      // Pure soft white
+        // Accent colors
+        'steel-blue': '#3B82F6',        // Call-to-action blue
+        'forest-green': '#10B981',      // Success/eco indicators
+        'cool-gray': '#6B7280',         // Secondary text
+        'slate-blue': '#475569',        // Muted elements
+        'ice-blue': '#DBEAFE',          // Light blue backgrounds
+        'mint-gray': '#F0FDF4',         // Light green backgrounds
+        
+        // Legacy colors (keeping some originals for compatibility)
+        'cream': '#FAF7F2',             // Light cream background
+        'sand': '#E8DCC4',              // Warm sand
+        'sand-dark': '#D4C4A8',         // Darker sand for cards
+        'khaki': '#C8B89E',             // Medium khaki
+        'taupe': '#A69580',             // Darker taupe
+        'espresso': '#4A3F36',          // Dark brown for text
+        'brown-tint': '#7B5E48',        // Brown for glass tint
+        
+        // Removing purple/pink tones and replacing with appropriate colors
+        'sage-accent': '#10B981',       // Changed from sage to forest green
+        'sage-mist': '#6EE7B7',         // Light forest green
+        'terra-cotta': '#F59E0B',       // Changed to professional amber
+        'soft-white': '#FEFDFB',        // Pure soft white
         
         // Functional colors
-        'warm-gray': '#8B8680',       // For secondary text
-        'light-gray': '#F5F2ED',      // For backgrounds
+        'warm-gray': '#6B7280',         // For secondary text
+        'light-gray': '#F9FAFB',        // For backgrounds
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
@@ -44,8 +61,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(184, 148, 111, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(184, 148, 111, 0.5)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' }, // Changed to forest green
+          '50%': { boxShadow: '0 0 30px rgba(16, 185, 129, 0.5)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
@@ -77,6 +94,8 @@ export default {
         'elegant': '0 10px 40px rgba(0, 0, 0, 0.15)',
         'text-glow': '0 0 10px rgba(0, 0, 0, 0.5)',
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1)',
+        'northern': '0 4px 20px rgba(30, 64, 175, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1)',
+        'legacy': '0 4px 20px rgba(5, 150, 105, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1)',
       },
     },
   },
