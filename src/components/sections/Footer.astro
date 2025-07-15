@@ -3,49 +3,71 @@ const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   company: [
-    { label: 'About', href: '#' },
+    { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Projects', href: '#projects' },
   ],
   support: [
     { label: 'Contact', href: '#contact-form' },
-    { label: 'FAQ', href: '#' },
-    { label: 'Privacy', href: '#' },
+    { label: 'Quote Request', href: '#contact-form' },
+    { label: 'Service Area', href: '#' },
   ],
-  social: [
-    { label: 'Facebook', href: '#' },
-    { label: 'Instagram', href: '#' },
-    { label: 'LinkedIn', href: '#' },
+  services: [
+    { label: 'Residential Insulation', href: '#services' },
+    { label: 'Commercial Projects', href: '#services' },
+    { label: 'New Construction', href: '#services' },
   ]
 };
 ---
 
-<footer class="bg-charcoal text-soft-white py-16">
+<footer class="bg-midnight text-soft-white py-16">
   <div class="container-padding max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
       <!-- Brand -->
       <div class="space-y-4">
-        <a href="/" class="inline-block">
-          <img 
-            src="/images/logos/SPRAY-COMFORT-INSULAITON-ARIZONA-LG-LOGO2.png" 
-            alt="Comfort Insulation" 
-            class="h-16 w-auto brightness-110"
-          />
-        </a>
-        <p class="text-cream/70 text-sm">
-          Professional insulation solutions for Arizona homes.
+        <div class="mb-4">
+          <h2 class="text-2xl font-bold text-legacy-green mb-2">Northern Legacy</h2>
+          <h3 class="text-lg text-steel-blue">Spray Foam</h3>
+        </div>
+        <p class="text-frost-gray text-sm leading-relaxed">
+          Professional spray foam insulation solutions for Minnesota homes and businesses. 
+          Serving the state with quality, reliability, and excellence.
         </p>
+        <div class="text-sm text-frost-gray">
+          <p class="font-medium text-soft-white">Contact Information:</p>
+          <p>📍 23154 190th Street</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;Lawn Prairie, MN 56437</p>
+          <p>📞 (320) 760-2543</p>
+          <p>✉️ Northernlegacysprayfoam@gmail.com</p>
+        </div>
       </div>
       
       <!-- Company Links -->
       <div>
-        <h3 class="font-semibold mb-4 text-cream">Company</h3>
+        <h3 class="font-semibold mb-4 text-legacy-green">Company</h3>
         <ul class="space-y-2">
           {footerLinks.company.map((link) => (
             <li>
               <a 
                 href={link.href}
-                class="text-cream/60 hover:text-cream transition-colors duration-300 text-sm"
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Services Links -->
+      <div>
+        <h3 class="font-semibold mb-4 text-steel-blue">Services</h3>
+        <ul class="space-y-2">
+          {footerLinks.services.map((link) => (
+            <li>
+              <a 
+                href={link.href}
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
               >
                 {link.label}
               </a>
@@ -56,47 +78,43 @@ const footerLinks = {
       
       <!-- Support Links -->
       <div>
-        <h3 class="font-semibold mb-4 text-cream">Support</h3>
+        <h3 class="font-semibold mb-4 text-northern-blue">Support</h3>
         <ul class="space-y-2">
           {footerLinks.support.map((link) => (
             <li>
               <a 
                 href={link.href}
-                class="text-cream/60 hover:text-cream transition-colors duration-300 text-sm"
+                class="text-frost-gray hover:text-soft-white transition-colors duration-300 text-sm"
               >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
-      </div>
-      
-      <!-- Social Links -->
-      <div>
-        <h3 class="font-semibold mb-4 text-cream">Connect</h3>
-        <ul class="space-y-2">
-          {footerLinks.social.map((link) => (
-            <li>
-              <a 
-                href={link.href}
-                class="text-cream/60 hover:text-cream transition-colors duration-300 text-sm"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div class="mt-6 pt-4 border-t border-steel-gray/30">
+          <p class="text-xs text-frost-gray mb-2">Service Areas:</p>
+          <p class="text-xs text-cool-gray">Minnesota Statewide</p>
+        </div>
       </div>
     </div>
     
     <!-- Divider -->
-    <div class="border-t border-cream/20 pt-8">
+    <div class="border-t border-steel-gray/30 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-cream/50 text-sm">
-          © {currentYear} Comfort Insulation Arizona. All rights reserved.
+        <p class="text-frost-gray text-sm">
+          © {currentYear} Northern Legacy Spray Foam. All rights reserved.
         </p>
-        <p class="text-cream/50 text-sm">
-          Licensed • Bonded • Insured
+        <div class="flex items-center gap-4 text-sm">
+          <p class="text-legacy-green font-medium">Licensed</p>
+          <span class="text-steel-gray">•</span>
+          <p class="text-steel-blue font-medium">Bonded</p>
+          <span class="text-steel-gray">•</span>
+          <p class="text-northern-blue font-medium">Insured</p>
+        </div>
+      </div>
+      <div class="mt-4 pt-4 border-t border-steel-gray/20">
+        <p class="text-xs text-cool-gray text-center">
+          Founded May 9, 2022 • Owner: Garhard Hendricks • Minnesota LLC
         </p>
       </div>
     </div>
