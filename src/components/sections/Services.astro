@@ -10,26 +10,34 @@ const services = [
     title: 'Residential Spray Foam',
     description: 'Professional spray foam insulation for Minnesota homes, providing superior energy efficiency and comfort.',
     features: ['Energy savings up to 40%', 'Professional installation', 'Premium materials', 'Lifetime warranty'],
-    image: atticImage
+    image: atticImage,
+    accent: 'legacy-green'
   },
   {
     title: 'Commercial Insulation',
     description: 'Industrial-grade spray foam solutions for businesses and commercial properties throughout Minnesota.',
     features: ['Reduce operating costs', 'Improved indoor air quality', 'Fire-resistant options', 'Fast installation'],
-    image: crawlSpaceImage
+    image: crawlSpaceImage,
+    accent: 'northern-blue'
   },
   {
     title: 'New Construction',
     description: 'Complete insulation systems for new home construction projects with cutting-edge spray foam technology.',
     features: ['Seamless application', 'Enhanced building envelope', 'Moisture barrier protection', 'Code compliance'],
-    image: wallImage
+    image: wallImage,
+    accent: 'steel-blue'
   }
 ];
 ---
 
-<section class="section-padding bg-frost-gray" id="services">
+<section class="section-padding bg-gradient-to-br from-frost-gray to-ice-blue/30" id="services">
   <div class="container-padding max-w-7xl mx-auto">
     <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <div class="w-12 h-[1px] bg-legacy-green"></div>
+        <span class="text-legacy-green font-medium uppercase tracking-wider text-sm">Our Services</span>
+        <div class="w-12 h-[1px] bg-legacy-green"></div>
+      </div>
       <h2 class="heading-lg text-charcoal mb-4">
         Northern Legacy Spray Foam Services
       </h2>
@@ -41,26 +49,34 @@ const services = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       {services.map((service, index) => (
         <div 
-          class="animate-slide-up" 
+          class="animate-slide-up group" 
           style={`animation-delay: ${index * 0.15}s`}
         >
-          <!-- Modern Northern Legacy card with professional styling -->
+          <!-- Enhanced card with more green styling and dynamic accents -->
           <div class="
-            group relative h-full
-            bg-arctic-white
+            relative h-full
+            bg-arctic-white/95 backdrop-blur-sm
             rounded-3xl p-4
             shadow-northern hover:shadow-legacy
             transition-all duration-500 
-            transform hover:-translate-y-2
+            transform hover:-translate-y-3 hover:scale-[1.02]
             overflow-hidden
-            border border-steel-gray/30
+            border border-ice-blue/30 hover:border-legacy-green/40
+            group-hover:bg-arctic-white
           ">
-            <!-- Northern Legacy gradient accent -->
-            <div class="absolute inset-0 bg-gradient-to-br from-legacy-green/5 to-northern-blue/5 rounded-3xl"></div>
+            <!-- Dynamic gradient accent based on service type -->
+            <div class={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl ${
+              service.accent === 'legacy-green' ? 'from-legacy-green/5 to-forest-green/10' :
+              service.accent === 'northern-blue' ? 'from-northern-blue/5 to-steel-blue/10' :
+              'from-steel-blue/5 to-northern-blue/10'
+            }`}></div>
+            
+            <!-- Green accent line that appears on hover -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-legacy-green to-forest-green group-hover:w-32 transition-all duration-700 rounded-b-full"></div>
             
             <!-- Inner container -->
-            <div class="relative h-full flex flex-col">
-              <!-- Service Image -->
+            <div class="relative h-full flex flex-col z-10">
+              <!-- Service Image with enhanced overlay -->
               <div class="relative mb-4 overflow-hidden rounded-2xl aspect-[4/3]">
                 <img 
                   src={service.image.src} 
@@ -68,21 +84,27 @@ const services = [
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
-                <!-- Professional overlay with Northern Legacy colors -->
-                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-northern-blue/10 to-transparent opacity-60"></div>
+                <!-- Enhanced overlay with dynamic color -->
+                <div class={`absolute inset-0 bg-gradient-to-t from-charcoal/40 via-${service.accent}/10 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500`}></div>
                 
-                <!-- Service category badge -->
-                <div class="absolute top-3 left-3 bg-legacy-green/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                <!-- Enhanced service category badge -->
+                <div class={`absolute top-3 left-3 bg-${service.accent}/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium transform group-hover:scale-105 transition-transform duration-300 shadow-lg`}>
                   Professional Grade
                 </div>
+
+                <!-- Green corner accent -->
+                <div class="absolute bottom-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-b-[30px] border-b-legacy-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              <!-- Content container -->
-              <div class="bg-arctic-white rounded-2xl p-5 sm:p-6 flex-grow shadow-soft border border-ice-blue/30">
+              <!-- Content container with enhanced styling -->
+              <div class="bg-arctic-white/90 backdrop-blur-sm rounded-2xl p-5 sm:p-6 flex-grow shadow-soft border border-ice-blue/30 group-hover:border-legacy-green/30 transition-all duration-300">
                 <div class="space-y-4">
-                  <h3 class="text-xl sm:text-2xl font-bold text-charcoal">
-                    {service.title}
-                  </h3>
+                  <div class="flex items-center gap-3">
+                    <div class={`w-2 h-8 bg-gradient-to-b from-${service.accent} to-${service.accent}/60 rounded-full`}></div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-charcoal">
+                      {service.title}
+                    </h3>
+                  </div>
                   
                   <p class="text-cool-gray leading-relaxed">
                     {service.description}
@@ -90,17 +112,28 @@ const services = [
                   
                   <div class="pt-2">
                     <ul class="space-y-2.5">
-                      {service.features.map((feature) => (
-                        <li class="flex items-start gap-3">
-                          <span class="text-legacy-green mt-0.5 flex-shrink-0 font-bold">✓</span>
-                          <span class="text-cool-gray text-sm">{feature}</span>
+                      {service.features.map((feature, featureIndex) => (
+                        <li class="flex items-start gap-3 group/item">
+                          <span class={`text-${service.accent} mt-0.5 flex-shrink-0 font-bold transform group-hover/item:scale-110 transition-transform duration-300`}>✓</span>
+                          <span class="text-cool-gray text-sm group-hover:text-charcoal transition-colors duration-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
+
+                  <!-- Service action button -->
+                  <div class="pt-4">
+                    <button class={`w-full py-2 px-4 bg-${service.accent}/10 hover:bg-${service.accent}/20 text-${service.accent} font-medium rounded-lg transition-all duration-300 text-sm border border-${service.accent}/20 hover:border-${service.accent}/40`}>
+                      Learn More
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Enhanced floating elements -->
+            <div class="absolute -top-2 -right-2 w-6 h-6 bg-legacy-green/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+            <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-forest-green/30 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" style="animation-delay: 0.5s;"></div>
           </div>
         </div>
       ))}
@@ -110,43 +143,59 @@ const services = [
       <p class="text-cool-gray mb-6 text-lg">
         Ready to experience the Northern Legacy difference in spray foam insulation?
       </p>
-      <GlassButton 
-        href="#contact-form"
-        variant="primary"
-        size="lg"
-        client:visible
-      >
-        Get Your Free Estimate Today
-      </GlassButton>
+      <div class="space-y-4">
+        <GlassButton 
+          href="#contact-form"
+          variant="primary"
+          size="lg"
+          client:visible
+        >
+          Get Your Free Estimate Today
+        </GlassButton>
+        <div class="flex items-center justify-center gap-4 text-sm text-legacy-green">
+          <span class="flex items-center gap-1">
+            <span class="w-2 h-2 bg-legacy-green rounded-full animate-pulse"></span>
+            Licensed & Insured
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="w-2 h-2 bg-forest-green rounded-full animate-pulse" style="animation-delay: 0.5s;"></span>
+            Minnesota Statewide
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="w-2 h-2 bg-northern-blue rounded-full animate-pulse" style="animation-delay: 1s;"></span>
+            Free Estimates
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* Ensure consistent card heights */
-  .grid > div {
-    display: flex;
+  /* Enhanced animations */
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUpEnhanced 0.8s ease-out forwards;
   }
   
-  .grid > div > div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  @keyframes slideUpEnhanced {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
   
-  /* Enhanced Northern Legacy shadow effects */
+  /* Enhanced shadow effects */
   .shadow-northern {
     box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
   .shadow-legacy:hover {
-    box-shadow: 0 8px 30px rgba(5, 150, 105, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Smooth animations */
-  .animate-slide-up {
-    opacity: 0;
-    animation: slideUp 0.6s ease-out forwards;
+    box-shadow: 0 12px 40px rgba(5, 150, 105, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
   }
   
   /* Professional hover effects */
