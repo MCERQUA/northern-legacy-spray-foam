@@ -3,11 +3,28 @@ import GlassCard from '../ui/GlassCard.tsx';
 import GlassButton from '../ui/GlassButton.tsx';
 ---
 
-<section class="section-padding bg-frost-gray" id="contact-form">
-  <div class="container-padding max-w-6xl mx-auto">
+<section class="section-padding bg-gradient-to-br from-frost-gray via-ice-blue/20 to-mint-gray/30 relative overflow-hidden" id="contact-form">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-legacy-green/5 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-northern-blue/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-forest-green/3 rounded-full blur-3xl animate-spin" style="animation-duration: 30s;"></div>
+  </div>
+
+  <!-- Floating accent elements -->
+  <div class="absolute top-20 right-20 w-4 h-4 bg-legacy-green/30 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+  <div class="absolute bottom-20 left-20 w-3 h-3 bg-northern-blue/40 rounded-full animate-bounce" style="animation-delay: 3s;"></div>
+  <div class="absolute top-1/3 right-1/3 w-2 h-2 bg-forest-green/50 rounded-full animate-ping" style="animation-delay: 2s;"></div>
+
+  <div class="container-padding max-w-6xl mx-auto relative z-10">
     <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-legacy-green to-transparent"></div>
+        <span class="text-legacy-green font-medium uppercase tracking-wider text-sm bg-legacy-green/10 px-4 py-2 rounded-full border border-legacy-green/30 backdrop-blur-sm">Get Your Quote</span>
+        <div class="w-12 h-[1px] bg-gradient-to-r from-legacy-green via-legacy-green to-transparent"></div>
+      </div>
       <h2 class="heading-lg text-charcoal mb-4">
-        Get Your Free Quote Today
+        Get Your <span class="gradient-text-green">Free Quote</span> Today
       </h2>
       <p class="body-text text-cool-gray">
         Contact Northern Legacy Spray Foam for professional insulation solutions in Minnesota
@@ -15,186 +32,215 @@ import GlassButton from '../ui/GlassButton.tsx';
     </div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <!-- Contact Information -->
+      <!-- Enhanced Contact Information with green accents -->
       <div class="space-y-8">
-        <div class="bg-arctic-white rounded-3xl p-8 shadow-northern border border-ice-blue/30">
-          <h3 class="text-2xl font-bold text-charcoal mb-6">Contact Information</h3>
+        <div class="bg-arctic-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-northern border border-ice-blue/30 hover:border-legacy-green/40 transition-all duration-300 group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-3 h-8 bg-gradient-to-b from-legacy-green to-forest-green rounded-full"></div>
+            <h3 class="text-2xl font-bold text-charcoal">Contact Information</h3>
+          </div>
           
           <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-legacy-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-legacy-green/5 hover:bg-legacy-green/10 transition-colors duration-300 group/item">
+              <div class="w-12 h-12 bg-legacy-green/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-legacy-green/25 transition-colors duration-300">
                 <span class="text-legacy-green text-xl">📍</span>
               </div>
               <div>
-                <h4 class="font-semibold text-charcoal mb-1">Address</h4>
+                <h4 class="font-semibold text-charcoal mb-1 group-hover/item:text-legacy-green transition-colors duration-300">Address</h4>
                 <p class="text-cool-gray">23154 190th Street</p>
                 <p class="text-cool-gray">Lawn Prairie, MN 56437</p>
               </div>
             </div>
             
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-northern-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-northern-blue/5 hover:bg-northern-blue/10 transition-colors duration-300 group/item">
+              <div class="w-12 h-12 bg-northern-blue/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-northern-blue/25 transition-colors duration-300">
                 <span class="text-northern-blue text-xl">📞</span>
               </div>
               <div>
-                <h4 class="font-semibold text-charcoal mb-1">Phone</h4>
-                <a href="tel:3207602543" class="text-cool-gray hover:text-northern-blue transition-colors">
+                <h4 class="font-semibold text-charcoal mb-1 group-hover/item:text-northern-blue transition-colors duration-300">Phone</h4>
+                <a href="tel:3207602543" class="text-cool-gray hover:text-northern-blue transition-colors text-lg font-medium">
                   (320) 760-2543
                 </a>
               </div>
             </div>
             
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-steel-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-steel-blue/5 hover:bg-steel-blue/10 transition-colors duration-300 group/item">
+              <div class="w-12 h-12 bg-steel-blue/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-steel-blue/25 transition-colors duration-300">
                 <span class="text-steel-blue text-xl">✉️</span>
               </div>
               <div>
-                <h4 class="font-semibold text-charcoal mb-1">Email</h4>
+                <h4 class="font-semibold text-charcoal mb-1 group-hover/item:text-steel-blue transition-colors duration-300">Email</h4>
                 <a href="mailto:Northernlegacysprayfoam@gmail.com" class="text-cool-gray hover:text-steel-blue transition-colors break-all">
                   Northernlegacysprayfoam@gmail.com
                 </a>
               </div>
             </div>
             
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-forest-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-forest-green/5 hover:bg-forest-green/10 transition-colors duration-300 group/item">
+              <div class="w-12 h-12 bg-forest-green/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-forest-green/25 transition-colors duration-300">
                 <span class="text-forest-green text-xl">🏢</span>
               </div>
               <div>
-                <h4 class="font-semibold text-charcoal mb-1">Business Info</h4>
+                <h4 class="font-semibold text-charcoal mb-1 group-hover/item:text-forest-green transition-colors duration-300">Business Info</h4>
                 <p class="text-cool-gray">Owner: Garhard Hendricks</p>
                 <p class="text-cool-gray">Founded: May 9, 2022</p>
-                <p class="text-cool-gray">Licensed • Bonded • Insured</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <span class="w-2 h-2 bg-legacy-green rounded-full animate-pulse"></span>
+                  <span class="text-cool-gray text-sm">Licensed • Bonded • Insured</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="bg-legacy-green/5 rounded-2xl p-6 border border-legacy-green/20">
-          <h4 class="font-bold text-charcoal mb-3">Service Area</h4>
+        <div class="bg-gradient-to-br from-legacy-green/10 to-forest-green/5 rounded-2xl p-6 border border-legacy-green/20 backdrop-blur-sm hover:from-legacy-green/15 hover:to-forest-green/10 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-legacy-green text-xl">🗺️</span>
+            <h4 class="font-bold text-charcoal">Service Area</h4>
+          </div>
           <p class="text-cool-gray">
             We proudly serve all of Minnesota with professional spray foam insulation services. 
             Contact us for projects anywhere in the state!
           </p>
+          <div class="mt-4 flex items-center gap-2">
+            <span class="w-2 h-2 bg-legacy-green rounded-full animate-pulse"></span>
+            <span class="text-legacy-green font-medium text-sm">Minnesota Statewide Coverage</span>
+          </div>
         </div>
       </div>
       
-      <!-- Contact Form -->
+      <!-- Enhanced Contact Form -->
       <GlassCard client:visible variant="white">
-        <form 
-          name="northern-legacy-contact" 
-          method="POST" 
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="space-y-6"
-        >
-          <input type="hidden" name="form-name" value="northern-legacy-contact" />
-          <p class="hidden">
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
+        <div class="relative">
+          <!-- Green accent border that appears on focus -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-legacy-green via-forest-green to-legacy-green rounded-3xl opacity-0 group-focus-within:opacity-20 transition-opacity duration-500"></div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form 
+            name="northern-legacy-contact" 
+            method="POST" 
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-6 relative z-10 group"
+          >
+            <input type="hidden" name="form-name" value="northern-legacy-contact" />
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                  <span class="w-2 h-2 bg-legacy-green rounded-full"></span>
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="form-input focus:border-legacy-green/60 focus:ring-legacy-green/30"
+                  placeholder="Your full name"
+                />
+              </div>
+              
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                  <span class="w-2 h-2 bg-northern-blue rounded-full"></span>
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="form-input focus:border-northern-blue/60 focus:ring-northern-blue/30"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="phone" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                  <span class="w-2 h-2 bg-steel-blue rounded-full"></span>
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input focus:border-steel-blue/60 focus:ring-steel-blue/30"
+                  placeholder="(123) 456-7890"
+                />
+              </div>
+              
+              <div class="space-y-2">
+                <label for="project-type" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                  <span class="w-2 h-2 bg-forest-green rounded-full"></span>
+                  Project Type
+                </label>
+                <select id="project-type" name="project-type" class="form-input focus:border-forest-green/60 focus:ring-forest-green/30">
+                  <option value="">Select project type</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                  <option value="new-construction">New Construction</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            
             <div class="space-y-2">
-              <label for="name" class="block text-sm font-semibold text-charcoal">
-                Name *
+              <label for="location" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                <span class="w-2 h-2 bg-legacy-green rounded-full animate-pulse"></span>
+                Project Location (City, MN)
               </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                required
-                class="form-input"
-                placeholder="Your full name"
+                id="location"
+                name="location"
+                class="form-input focus:border-legacy-green/60 focus:ring-legacy-green/30"
+                placeholder="City, Minnesota"
               />
             </div>
             
             <div class="space-y-2">
-              <label for="email" class="block text-sm font-semibold text-charcoal">
-                Email *
+              <label for="message" class="block text-sm font-semibold text-charcoal flex items-center gap-2">
+                <span class="w-2 h-2 bg-northern-blue rounded-full animate-pulse"></span>
+                Project Details *
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
                 required
-                class="form-input"
-                placeholder="your@email.com"
-              />
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label for="phone" class="block text-sm font-semibold text-charcoal">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="form-input"
-                placeholder="(123) 456-7890"
-              />
+                class="form-input resize-none focus:border-northern-blue/60 focus:ring-northern-blue/30"
+                placeholder="Please describe your spray foam insulation project, square footage, timeline, and any specific requirements..."
+              ></textarea>
             </div>
             
-            <div class="space-y-2">
-              <label for="project-type" class="block text-sm font-semibold text-charcoal">
-                Project Type
-              </label>
-              <select id="project-type" name="project-type" class="form-input">
-                <option value="">Select project type</option>
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-                <option value="new-construction">New Construction</option>
-                <option value="other">Other</option>
-              </select>
+            <div class="flex justify-center pt-4">
+              <button
+                type="submit"
+                class="group relative px-10 py-4 rounded-full font-bold transition-all duration-300 
+                       bg-gradient-to-r from-legacy-green to-forest-green text-arctic-white 
+                       hover:from-forest-green hover:to-legacy-green
+                       shadow-legacy hover:shadow-northern
+                       transform hover:-translate-y-1 hover:scale-105
+                       overflow-hidden
+                       border border-legacy-green/20"
+              >
+                <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative z-10 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                  Get My Free Quote
+                  <span class="w-2 h-2 bg-white rounded-full animate-pulse" style="animation-delay: 0.5s;"></span>
+                </span>
+              </button>
             </div>
-          </div>
-          
-          <div class="space-y-2">
-            <label for="location" class="block text-sm font-semibold text-charcoal">
-              Project Location (City, MN)
-            </label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              class="form-input"
-              placeholder="City, Minnesota"
-            />
-          </div>
-          
-          <div class="space-y-2">
-            <label for="message" class="block text-sm font-semibold text-charcoal">
-              Project Details *
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              class="form-input resize-none"
-              placeholder="Please describe your spray foam insulation project, square footage, timeline, and any specific requirements..."
-            ></textarea>
-          </div>
-          
-          <div class="flex justify-center">
-            <button
-              type="submit"
-              class="px-10 py-4 rounded-full font-bold transition-all duration-300 
-                     bg-legacy-green text-soft-white hover:bg-legacy-green/90
-                     shadow-legacy hover:shadow-lg
-                     transform hover:-translate-y-0.5
-                     relative overflow-hidden
-                     border border-legacy-green/20"
-            >
-              <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-              <span class="relative z-10">Get My Free Quote</span>
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </GlassCard>
     </div>
   </div>
