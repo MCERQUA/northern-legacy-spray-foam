@@ -2,7 +2,8 @@
 // Import components with proper paths
 import GlassButton from '../ui/GlassButton.tsx';
 import LogoScroller from '../ui/LogoScroller.tsx';
-import heroImage from '@assets/images/Comfort-Insulation-Arizona-hero1.png';
+// Changed to use public image instead of asset image
+const heroImage = '/images/Spray-Foam_insulation.JPG';
 ---
 
 <section 
@@ -11,7 +12,7 @@ import heroImage from '@assets/images/Comfort-Insulation-Arizona-hero1.png';
   <!-- Static Hero Background -->
   <div 
     class="absolute inset-0 z-0"
-    style={`background-image: url(${heroImage.src}); background-size: cover; background-repeat: no-repeat;`}
+    style={`background-image: url(${heroImage}); background-size: cover; background-repeat: no-repeat;`}
   >
     <!-- Responsive background positioning -->
     <style>
