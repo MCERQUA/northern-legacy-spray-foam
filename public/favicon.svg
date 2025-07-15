@@ -1,25 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="15" fill="#1a365d" stroke="#2d5a7a" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <style>
+      .compass-blue { fill: #1E90FF; }
+    </style>
+  </defs>
   
-  <!-- Compass rose outer ring -->
-  <circle cx="16" cy="16" r="12" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Outer Circle -->
+  <circle cx="50" cy="50" r="48" stroke="#1E90FF" stroke-width="4" fill="none"/>
   
-  <!-- North pointer (main direction) -->
-  <polygon points="16,4 18,12 16,11 14,12" fill="#dc2626"/>
+  <!-- Main Cross (North-South, East-West) -->
+  <line x1="50" y1="8" x2="50" y2="92" stroke="#1E90FF" stroke-width="3"/>
+  <line x1="8" y1="50" x2="92" y2="50" stroke="#1E90FF" stroke-width="3"/>
   
-  <!-- South pointer -->
-  <polygon points="16,28 14,20 16,21 18,20" fill="#374151"/>
+  <!-- Diagonal Lines -->
+  <line x1="21.7" y1="21.7" x2="78.3" y2="78.3" stroke="#1E90FF" stroke-width="2"/>
+  <line x1="78.3" y1="21.7" x2="21.7" y2="78.3" stroke="#1E90FF" stroke-width="2"/>
   
-  <!-- East pointer -->
-  <polygon points="28,16 20,14 21,16 20,18" fill="#374151"/>
+  <!-- North Arrow -->
+  <polygon points="50,8 45,20 55,20" class="compass-blue"/>
   
-  <!-- West pointer -->
-  <polygon points="4,16 12,18 11,16 12,14" fill="#374151"/>
+  <!-- Directional Points -->
+  <polygon points="50,15 47,25 53,25" class="compass-blue"/>
+  <polygon points="50,85 47,75 53,75" class="compass-blue"/>
+  <polygon points="15,50 25,47 25,53" class="compass-blue"/>
+  <polygon points="85,50 75,47 75,53" class="compass-blue"/>
   
-  <!-- Center circle -->
-  <circle cx="16" cy="16" r="2" fill="#e2e8f0"/>
-  
-  <!-- Northern Legacy initials -->
-  <text x="16" y="19" text-anchor="middle" font-family="sans-serif" font-size="3" font-weight="bold" fill="#e2e8f0">NL</text>
+  <!-- Center Star -->
+  <polygon points="50,40 52,46 58,46 53,50 55,56 50,52 45,56 47,50 42,46 48,46" class="compass-blue"/>
 </svg>
