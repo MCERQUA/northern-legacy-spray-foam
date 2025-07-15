@@ -7,34 +7,34 @@ import wallImage from '@assets/images/wall-ceilings-foam-insulation-arizona-comf
 
 const services = [
   {
-    title: 'Attic Insulation',
-    description: 'Complete attic insulation solutions to keep your home comfortable year-round.',
-    features: ['Energy savings up to 40%', 'Professional installation', 'Premium materials'],
+    title: 'Residential Spray Foam',
+    description: 'Professional spray foam insulation for Minnesota homes, providing superior energy efficiency and comfort.',
+    features: ['Energy savings up to 40%', 'Professional installation', 'Premium materials', 'Lifetime warranty'],
     image: atticImage
   },
   {
-    title: 'Crawl Space',
-    description: 'Protect your home from below with proper crawl space insulation.',
-    features: ['Prevent moisture damage', 'Improve air quality', 'Pest deterrent'],
+    title: 'Commercial Insulation',
+    description: 'Industrial-grade spray foam solutions for businesses and commercial properties throughout Minnesota.',
+    features: ['Reduce operating costs', 'Improved indoor air quality', 'Fire-resistant options', 'Fast installation'],
     image: crawlSpaceImage
   },
   {
-    title: 'Wall Insulation',
-    description: 'Advanced wall insulation techniques for maximum thermal efficiency.',
-    features: ['Reduced noise', 'Temperature control', 'Moisture protection'],
+    title: 'New Construction',
+    description: 'Complete insulation systems for new home construction projects with cutting-edge spray foam technology.',
+    features: ['Seamless application', 'Enhanced building envelope', 'Moisture barrier protection', 'Code compliance'],
     image: wallImage
   }
 ];
 ---
 
-<section class="section-padding bg-cream" id="services">
+<section class="section-padding bg-frost-gray" id="services">
   <div class="container-padding max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="heading-lg text-espresso mb-4">
-        Our Services
+      <h2 class="heading-lg text-charcoal mb-4">
+        Northern Legacy Spray Foam Services
       </h2>
-      <p class="body-text text-warm-gray max-w-2xl mx-auto">
-        Professional insulation solutions tailored to Arizona homes
+      <p class="body-text text-cool-gray max-w-2xl mx-auto">
+        Professional spray foam insulation solutions designed for Minnesota's climate and your specific needs
       </p>
     </div>
     
@@ -44,18 +44,19 @@ const services = [
           class="animate-slide-up" 
           style={`animation-delay: ${index * 0.15}s`}
         >
-          <!-- Modern card with darker background and shadow -->
+          <!-- Modern Northern Legacy card with professional styling -->
           <div class="
             group relative h-full
-            bg-taupe/40 
+            bg-arctic-white
             rounded-3xl p-4
-            shadow-lg hover:shadow-xl 
+            shadow-northern hover:shadow-legacy
             transition-all duration-500 
-            transform hover:-translate-y-1
+            transform hover:-translate-y-2
             overflow-hidden
+            border border-steel-gray/30
           ">
-            <!-- Glass effect border -->
-            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"></div>
+            <!-- Northern Legacy gradient accent -->
+            <div class="absolute inset-0 bg-gradient-to-br from-legacy-green/5 to-northern-blue/5 rounded-3xl"></div>
             
             <!-- Inner container -->
             <div class="relative h-full flex flex-col">
@@ -67,18 +68,23 @@ const services = [
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
-                <!-- Subtle overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent opacity-40"></div>
+                <!-- Professional overlay with Northern Legacy colors -->
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-northern-blue/10 to-transparent opacity-60"></div>
+                
+                <!-- Service category badge -->
+                <div class="absolute top-3 left-3 bg-legacy-green/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Professional Grade
+                </div>
               </div>
               
-              <!-- Content container - fixed bottom styling -->
-              <div class="bg-soft-white rounded-2xl p-5 sm:p-6 flex-grow shadow-inner">
+              <!-- Content container -->
+              <div class="bg-arctic-white rounded-2xl p-5 sm:p-6 flex-grow shadow-soft border border-ice-blue/30">
                 <div class="space-y-4">
-                  <h3 class="text-xl sm:text-2xl font-bold text-espresso">
+                  <h3 class="text-xl sm:text-2xl font-bold text-charcoal">
                     {service.title}
                   </h3>
                   
-                  <p class="text-warm-gray leading-relaxed">
+                  <p class="text-cool-gray leading-relaxed">
                     {service.description}
                   </p>
                   
@@ -86,8 +92,8 @@ const services = [
                     <ul class="space-y-2.5">
                       {service.features.map((feature) => (
                         <li class="flex items-start gap-3">
-                          <span class="text-terra-cotta mt-0.5 flex-shrink-0">✓</span>
-                          <span class="text-warm-gray text-sm">{feature}</span>
+                          <span class="text-legacy-green mt-0.5 flex-shrink-0 font-bold">✓</span>
+                          <span class="text-cool-gray text-sm">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -101,8 +107,8 @@ const services = [
     </div>
     
     <div class="text-center mt-16">
-      <p class="text-warm-gray mb-6 text-lg">
-        Ready to improve your home's comfort and efficiency?
+      <p class="text-cool-gray mb-6 text-lg">
+        Ready to experience the Northern Legacy difference in spray foam insulation?
       </p>
       <GlassButton 
         href="#contact-form"
@@ -110,7 +116,7 @@ const services = [
         size="lg"
         client:visible
       >
-        Get Your Free Estimate
+        Get Your Free Estimate Today
       </GlassButton>
     </div>
   </div>
@@ -128,18 +134,24 @@ const services = [
     width: 100%;
   }
   
-  /* Enhanced shadow effects */
-  .shadow-lg {
-    box-shadow: 0 10px 25px -5px rgba(74, 63, 54, 0.3), 0 10px 10px -5px rgba(74, 63, 54, 0.15);
+  /* Enhanced Northern Legacy shadow effects */
+  .shadow-northern {
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
-  .shadow-xl:hover {
-    box-shadow: 0 20px 35px -5px rgba(74, 63, 54, 0.35), 0 15px 15px -5px rgba(74, 63, 54, 0.2);
+  .shadow-legacy:hover {
+    box-shadow: 0 8px 30px rgba(5, 150, 105, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   /* Smooth animations */
   .animate-slide-up {
     opacity: 0;
     animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  /* Professional hover effects */
+  .group:hover .absolute.top-3 {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
 </style>
