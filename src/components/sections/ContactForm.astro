@@ -3,105 +3,199 @@ import GlassCard from '../ui/GlassCard.tsx';
 import GlassButton from '../ui/GlassButton.tsx';
 ---
 
-<section class="section-padding bg-cream" id="contact-form">
-  <div class="container-padding max-w-4xl mx-auto">
+<section class="section-padding bg-frost-gray" id="contact-form">
+  <div class="container-padding max-w-6xl mx-auto">
     <div class="text-center mb-12">
-      <h2 class="heading-lg text-espresso mb-4">
-        Get in Touch
+      <h2 class="heading-lg text-charcoal mb-4">
+        Get Your Free Quote Today
       </h2>
-      <p class="body-text text-warm-gray">
-        Let's discuss how we can help create your perfect space
+      <p class="body-text text-cool-gray">
+        Contact Northern Legacy Spray Foam for professional insulation solutions in Minnesota
       </p>
     </div>
     
-    <GlassCard client:visible variant="white">
-      <form 
-        name="contact" 
-        method="POST" 
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="space-y-6"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-          <label>
-            Don't fill this out if you're human: <input name="bot-field" />
-          </label>
-        </p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <div class="bg-arctic-white rounded-3xl p-8 shadow-northern border border-ice-blue/30">
+          <h3 class="text-2xl font-bold text-charcoal mb-6">Contact Information</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-legacy-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-legacy-green text-xl">📍</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-charcoal mb-1">Address</h4>
+                <p class="text-cool-gray">23154 190th Street</p>
+                <p class="text-cool-gray">Lawn Prairie, MN 56437</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-northern-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-northern-blue text-xl">📞</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-charcoal mb-1">Phone</h4>
+                <a href="tel:3207602543" class="text-cool-gray hover:text-northern-blue transition-colors">
+                  (320) 760-2543
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-steel-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-steel-blue text-xl">✉️</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-charcoal mb-1">Email</h4>
+                <a href="mailto:Northernlegacysprayfoam@gmail.com" class="text-cool-gray hover:text-steel-blue transition-colors break-all">
+                  Northernlegacysprayfoam@gmail.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-forest-green/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-forest-green text-xl">🏢</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-charcoal mb-1">Business Info</h4>
+                <p class="text-cool-gray">Owner: Garhard Hendricks</p>
+                <p class="text-cool-gray">Founded: May 9, 2022</p>
+                <p class="text-cool-gray">Licensed • Bonded • Insured</p>
+              </div>
+            </div>
+          </div>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-legacy-green/5 rounded-2xl p-6 border border-legacy-green/20">
+          <h4 class="font-bold text-charcoal mb-3">Service Area</h4>
+          <p class="text-cool-gray">
+            We proudly serve all of Minnesota with professional spray foam insulation services. 
+            Contact us for projects anywhere in the state!
+          </p>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <GlassCard client:visible variant="white">
+        <form 
+          name="northern-legacy-contact" 
+          method="POST" 
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6"
+        >
+          <input type="hidden" name="form-name" value="northern-legacy-contact" />
+          <p class="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="name" class="block text-sm font-semibold text-charcoal">
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-input"
+                placeholder="Your full name"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label for="email" class="block text-sm font-semibold text-charcoal">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-input"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="phone" class="block text-sm font-semibold text-charcoal">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="(123) 456-7890"
+              />
+            </div>
+            
+            <div class="space-y-2">
+              <label for="project-type" class="block text-sm font-semibold text-charcoal">
+                Project Type
+              </label>
+              <select id="project-type" name="project-type" class="form-input">
+                <option value="">Select project type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="new-construction">New Construction</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
           <div class="space-y-2">
-            <label for="name" class="block text-sm font-semibold text-espresso">
-              Name
+            <label for="location" class="block text-sm font-semibold text-charcoal">
+              Project Location (City, MN)
             </label>
             <input
               type="text"
-              id="name"
-              name="name"
-              required
+              id="location"
+              name="location"
               class="form-input"
-              placeholder="Your name"
+              placeholder="City, Minnesota"
             />
           </div>
           
           <div class="space-y-2">
-            <label for="email" class="block text-sm font-semibold text-espresso">
-              Email
+            <label for="message" class="block text-sm font-semibold text-charcoal">
+              Project Details *
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
               required
-              class="form-input"
-              placeholder="your@email.com"
-            />
+              class="form-input resize-none"
+              placeholder="Please describe your spray foam insulation project, square footage, timeline, and any specific requirements..."
+            ></textarea>
           </div>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="subject" class="block text-sm font-semibold text-espresso">
-            Subject
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            required
-            class="form-input"
-            placeholder="How can we help?"
-          />
-        </div>
-        
-        <div class="space-y-2">
-          <label for="message" class="block text-sm font-semibold text-espresso">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            required
-            class="form-input resize-none"
-            placeholder="Tell us about your project..."
-          ></textarea>
-        </div>
-        
-        <div class="flex justify-center">
-          <button
-            type="submit"
-            class="px-10 py-4 rounded-full font-bold transition-all duration-300 
-                   bg-terra-cotta/60 text-soft-white hover:bg-terra-cotta/70 
-                   backdrop-blur-md border border-terra-cotta/20
-                   shadow-glass hover:shadow-lg
-                   transform hover:-translate-y-0.5
-                   relative overflow-hidden"
-          >
-            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-            <span class="relative z-10">Send Message</span>
-          </button>
-        </div>
-      </form>
-    </GlassCard>
+          
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="px-10 py-4 rounded-full font-bold transition-all duration-300 
+                     bg-legacy-green text-soft-white hover:bg-legacy-green/90
+                     shadow-legacy hover:shadow-lg
+                     transform hover:-translate-y-0.5
+                     relative overflow-hidden
+                     border border-legacy-green/20"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+              <span class="relative z-10">Get My Free Quote</span>
+            </button>
+          </div>
+        </form>
+      </GlassCard>
+    </div>
   </div>
 </section>
