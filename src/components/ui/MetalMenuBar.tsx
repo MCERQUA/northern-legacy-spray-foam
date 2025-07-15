@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Menu, Home, User, Briefcase, FileText, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home, User, Briefcase, Phone } from "lucide-react";
 
 interface NavItem {
   name: string;
@@ -22,86 +22,11 @@ const defaultNavItems: NavItem[] = [
   { name: 'Contact', url: '#contact-form', icon: Phone }
 ];
 
-const EXPAND_SCROLL_THRESHOLD = 80;
-
-const containerVariants = {
-  expanded: {
-    y: 0,
-    opacity: 1,
-    width: "auto",
-    transition: {
-      y: { type: "spring", damping: 18, stiffness: 250 },
-      opacity: { duration: 0.3 },
-      type: "spring",
-      damping: 20,
-      stiffness: 300,
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
-    },
-  },
-  collapsed: {
-    y: 0,
-    opacity: 1,
-    width: "3rem",
-    transition: {
-      type: "spring",
-      damping: 20,
-      stiffness: 300,
-      when: "afterChildren",
-      staggerChildren: 0.05,
-      staggerDirection: -1,
-    },
-  },
-};
-
-const itemVariants = {
-  expanded: { opacity: 1, x: 0, scale: 1, transition: { type: "spring", damping: 15 } },
-  collapsed: { opacity: 0, x: -20, scale: 0.95, transition: { duration: 0.2 } },
-};
-
-const collapsedIconVariants = {
-  expanded: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
-  collapsed: { 
-    opacity: 1, 
-    scale: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 300,
-      delay: 0.15,
-    }
-  },
-};
-
 export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBarProps) {
-  const [isExpanded, setExpanded] = React.useState(true);
   const [activeTab, setActiveTab] = React.useState(items[0].name);
-  
-  const { scrollY } = useScroll();
-  const lastScrollY = React.useRef(0);
-  const scrollPositionOnCollapse = React.useRef(0);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = lastScrollY.current;
-    
-    if (isExpanded && latest > previous && latest > 150) {
-      setExpanded(false);
-      scrollPositionOnCollapse.current = latest; 
-    } 
-    else if (!isExpanded && latest < previous && (scrollPositionOnCollapse.current - latest > EXPAND_SCROLL_THRESHOLD)) {
-      setExpanded(true);
-    }
-    
-    lastScrollY.current = latest;
-  });
-
-  const handleNavClick = (e: React.MouseEvent, itemName: string) => {
-    if (!isExpanded) {
-      e.preventDefault();
-      setExpanded(true);
-    } else {
-      setActiveTab(itemName);
-    }
+  const handleNavClick = (itemName: string) => {
+    setActiveTab(itemName);
   };
 
   const cn = (...classes: string[]) => classes.filter(Boolean).join(' ');
@@ -110,13 +35,16 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
     <div className={cn("fixed top-6 left-1/2 -translate-x-1/2 z-50", className)}>
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
-        animate={isExpanded ? "expanded" : "collapsed"}
-        variants={containerVariants}
-        whileHover={!isExpanded ? { scale: 1.1 } : {}}
-        whileTap={!isExpanded ? { scale: 0.95 } : {}}
-        onClick={(e) => handleNavClick(e, "")}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          damping: 18,
+          stiffness: 250,
+          staggerChildren: 0.07,
+          delayChildren: 0.2,
+        }}
         className={cn(
-          "relative flex items-center overflow-hidden rounded-full h-12 cursor-pointer",
+          "relative flex items-center overflow-hidden rounded-full h-12",
           // Metal glass effect with Northern Legacy colors
           "bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90",
           "backdrop-blur-xl border border-slate-700/50",
@@ -124,8 +52,7 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
           // Animated gradient overlay
           "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500",
           // Inner glow
-          "after:absolute after:inset-[1px] after:rounded-full after:bg-gradient-to-br after:from-slate-700/20 after:to-transparent after:pointer-events-none",
-          !isExpanded && "justify-center"
+          "after:absolute after:inset-[1px] after:rounded-full after:bg-gradient-to-br after:from-slate-700/20 after:to-transparent after:pointer-events-none"
         )}
         style={{
           background: `linear-gradient(135deg, 
@@ -138,10 +65,10 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
       >
         {/* Navigation Items */}
         <motion.div
-          className={cn(
-            "flex items-center gap-1 sm:gap-2 px-4 relative z-10",
-            !isExpanded && "pointer-events-none"
-          )}
+          className="flex items-center gap-1 sm:gap-2 px-4 relative z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
         >
           {items.map((item) => {
             const isActive = activeTab === item.name;
@@ -150,10 +77,11 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
               <motion.a
                 key={item.name}
                 href={item.url}
-                variants={itemVariants}
+                initial={{ opacity: 0, x: -20, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ type: "spring", damping: 15 }}
                 onClick={(e) => {
-                  e.stopPropagation();
-                  handleNavClick(e, item.name);
+                  handleNavClick(item.name);
                 }}
                 className={cn(
                   "relative cursor-pointer text-sm font-medium px-3 py-2 rounded-full transition-all duration-300",
@@ -163,7 +91,7 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
                   isActive && "bg-white/15 text-white shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)]"
                 )}
               >
-                {/* Always show text, no icon switching */}
+                {/* Always show text */}
                 <span className="relative z-10">{item.name}</span>
                 
                 {/* Active indicator with forest green/steel blue theme */}
@@ -201,16 +129,6 @@ export function MetalMenuBar({ items = defaultNavItems, className }: MetalMenuBa
             );
           })}
         </motion.div>
-        
-        {/* Collapsed state icon */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div
-            variants={collapsedIconVariants}
-            animate={isExpanded ? "expanded" : "collapsed"}
-          >
-            <Menu className="h-6 w-6 text-slate-300" />
-          </motion.div>
-        </div>
 
         {/* Animated border glow */}
         <motion.div
