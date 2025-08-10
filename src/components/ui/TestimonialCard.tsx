@@ -52,8 +52,8 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         absolute left-0 top-0 
         h-[400px] w-[320px] sm:h-[450px] sm:w-[350px]
         select-none rounded-3xl 
-        border-2 border-sand-dark/30
-        bg-khaki/20 backdrop-blur-md
+        border-2 border-steel-blue/30
+        bg-ice-blue/20 backdrop-blur-md
         p-6 sm:p-8 shadow-xl
         flex flex-col items-center justify-center gap-6
         ${isFront ? "cursor-grab active:cursor-grabbing" : ""}
@@ -61,7 +61,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     >
       {/* Avatar */}
       <div className="relative">
-        <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-sand/30 p-1">
+        <div className="h-28 w-28 sm:h-32 sm:w-32 rounded-full bg-ice-blue/30 p-1">
           <img
             src={`https://i.pravatar.cc/128?img=${id}`}
             alt={`Avatar of ${author}`}
