@@ -84,7 +84,6 @@ const FloatingContactButton: React.FC = () => {
               </button>
             </form>
             
-            <div className="border-t border-ice-blue/30 pt-4">
             <div className="space-y-4">
               <a
                 href="tel:3207602543"
@@ -109,7 +108,6 @@ const FloatingContactButton: React.FC = () => {
               >
                 Get Free Quote
               </button>
-            </div>
             </div>
           </div>
         </div>
