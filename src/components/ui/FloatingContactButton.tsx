@@ -34,13 +34,13 @@ const FloatingContactButton: React.FC = () => {
             
             <h3 className="text-2xl font-bold text-charcoal mb-6">Contact Northern Legacy</h3>
             
-            {/* Contact Form */}
+            {/* Contact Form with Glass Styling */}
             <form className="space-y-4 mb-6">
               <div>
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 rounded-xl border border-ice-blue/50 focus:border-forest-green/50 focus:outline-none focus:ring-2 focus:ring-forest-green/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-arctic-white/70 backdrop-blur-sm border border-ice-blue/30 text-charcoal placeholder-cool-gray focus:outline-none focus:border-forest-green/50 focus:ring-2 focus:ring-forest-green/20 transition-all duration-300 hover:border-forest-green/30"
                   required
                 />
               </div>
@@ -48,7 +48,7 @@ const FloatingContactButton: React.FC = () => {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl border border-ice-blue/50 focus:border-forest-green/50 focus:outline-none focus:ring-2 focus:ring-forest-green/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-arctic-white/70 backdrop-blur-sm border border-ice-blue/30 text-charcoal placeholder-cool-gray focus:outline-none focus:border-forest-green/50 focus:ring-2 focus:ring-forest-green/20 transition-all duration-300 hover:border-forest-green/30"
                   required
                 />
               </div>
@@ -56,12 +56,12 @@ const FloatingContactButton: React.FC = () => {
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-xl border border-ice-blue/50 focus:border-forest-green/50 focus:outline-none focus:ring-2 focus:ring-forest-green/20 transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-arctic-white/70 backdrop-blur-sm border border-ice-blue/30 text-charcoal placeholder-cool-gray focus:outline-none focus:border-forest-green/50 focus:ring-2 focus:ring-forest-green/20 transition-all duration-300 hover:border-forest-green/30"
                 />
               </div>
               <div>
-                <select className="w-full px-4 py-3 rounded-xl border border-ice-blue/50 focus:border-forest-green/50 focus:outline-none focus:ring-2 focus:ring-forest-green/20 transition-all">
-                  <option value="">Select Service</option>
+                <select className="w-full px-4 py-3 rounded-xl bg-arctic-white/70 backdrop-blur-sm border border-ice-blue/30 text-charcoal focus:outline-none focus:border-forest-green/50 focus:ring-2 focus:ring-forest-green/20 transition-all duration-300 hover:border-forest-green/30">
+                  <option value="" className="text-cool-gray">Select Service</option>
                   <option value="attic-insulation">Attic Insulation</option>
                   <option value="wall-insulation">Wall Insulation</option>
                   <option value="basement-insulation">Basement Insulation</option>
@@ -73,7 +73,7 @@ const FloatingContactButton: React.FC = () => {
                 <textarea
                   placeholder="Project Details (optional)"
                   rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-ice-blue/50 focus:border-forest-green/50 focus:outline-none focus:ring-2 focus:ring-forest-green/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-arctic-white/70 backdrop-blur-sm border border-ice-blue/30 text-charcoal placeholder-cool-gray focus:outline-none focus:border-forest-green/50 focus:ring-2 focus:ring-forest-green/20 transition-all duration-300 hover:border-forest-green/30 resize-none"
                 ></textarea>
               </div>
               <button
@@ -148,8 +148,8 @@ const FloatingContactButton: React.FC = () => {
             {/* Inner glow */}
             <div className="absolute inset-[1px] rounded-full bg-gradient-to-br from-slate-700/20 to-transparent pointer-events-none" />
             
-            {/* White phone icon for better contrast */}
-            <Phone className="w-5 h-5 text-white relative z-10 drop-shadow-sm" />
+            {/* Forest green phone icon for lighter green appearance */}
+            <Phone className="w-5 h-5 text-forest-green relative z-10 drop-shadow-sm" />
             
             {/* Active-style highlight effect with white/blue theme */}
             <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
